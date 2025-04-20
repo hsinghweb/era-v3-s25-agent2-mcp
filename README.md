@@ -1,35 +1,26 @@
-# Agent with MCP Server, MCP Client, and AI Agent
+# Agent with MCP Server and AI Agent
 
-A sophisticated mathematical computation system with integrated PowerPoint visualization capabilities. The system leverages AI-driven natural language processing to perform complex mathematical operations and automatically generate visual presentations of the results. Built with three synergistic components, it offers a seamless workflow from mathematical computation to visual representation.
+A sophisticated mathematical computation system with integrated PowerPoint visualization capabilities. The system leverages AI-driven natural language processing (via Gemini API) to perform complex mathematical operations. Built with two synergistic components, it offers a seamless workflow from computation to presentation.
 
 ## Components
 
 ### MCP Server (mcp-server.py)
 - Provides various mathematical functions including:
   - Basic arithmetic operations (add, subtract, multiply, divide)
+  - List operations (summing lists)
   - Advanced math functions (power, square root, cube root, factorial, logarithm)
   - Trigonometric functions (sin, cos, tan)
-  - Special functions (ASCII conversion, exponential sum, Fibonacci sequence)
 - PowerPoint automation capabilities:
   - Create and manage presentations
-  - Draw shapes (rectangles)
-  - Add and format text
-  - Automated presentation handling
+  - Professional slide formatting
+  - Automated presentation handling using python-pptx
 
-### MCP Client (mcp-client.py)
-- Establishes connection with the MCP server
-- Demonstrates usage of server tools
-- Example implementation shows:
-  - Converting text to ASCII values
-  - Calculating exponential sums
-  - Creating PowerPoint presentations with results
-
-### AI Agent (ai-agent.py)
-- Provides intelligent natural language interface for mathematical operations
+### AI Agent (agent.py)
+- Provides intelligent natural language interface via Gemini API
 - Performs step-by-step mathematical reasoning and problem-solving
 - Executes complex mathematical computations with detailed explanations
-- Automatically generates PowerPoint visualizations of mathematical results
-- Maintains a structured workflow from computation to presentation
+- Maintains conversation state and iteration tracking
+- Handles API timeouts and errors gracefully
 
 ## Setup and Usage
 
@@ -38,11 +29,9 @@ A sophisticated mathematical computation system with integrated PowerPoint visua
    ```
    python mcp-server.py dev
    ```
-3. Run either the client or AI agent:
+3. Run the AI agent:
    ```
-   python mcp-client.py
-   # or
-   python ai-agent.py
+   python agent.py
    ```
 
 ## Example Operations
